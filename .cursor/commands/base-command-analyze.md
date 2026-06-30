@@ -18,7 +18,8 @@ Produce a grounded technical analysis before recommending action.
 # Do Not Use This When
 
 - Use `find-bug` when the explicit goal is hidden defect discovery.
-- Use `research` when the main evidence is external docs or broad option discovery.
+- Use `compare` when the main goal is choosing between options.
+- Use `architecture` when evaluating system structure is the primary goal.
 
 ---
 

@@ -9,6 +9,7 @@ projects without coupling prompts to one application framework.
 | Path | Purpose |
 |---|---|
 | `AGENTS.md` | Human-facing operating guide, precedence rules, and command selection guide |
+| `COMMANDS.md` | Command 功能说明：每个 command 的用途、边界与输出格式 |
 | `.cursor/rules/` | Global baselines that apply across tasks |
 | `.cursor/commands/` | User intent entry points and workflow boundaries |
 | `.cursor/skills/` | Reusable engineering methodology and checklists |
@@ -23,26 +24,25 @@ projects without coupling prompts to one application framework.
 
 Use the narrowest command that matches the user's intent:
 
-- `ask`: direct answer or small clarification.
-- `research`: evidence-backed investigation across code, docs, APIs, or options.
 - `analyze`: local technical analysis of a code path, log, error, or problem.
 - `explain`: explain how code or architecture works.
 - `review`: general code or PR review.
 - `audit`: security, privacy, compliance, reliability, or operational risk audit.
 - `find-bug`: hidden defect and correctness-risk discovery.
+- `compare`: compare options or implementations.
 - `architecture`: evaluate an existing system design.
 - `design`: propose a new feature, UI, API, or system design.
 - `plan`: create an execution plan without editing files.
 - `implement`: modify the codebase and verify the change.
-- `generate`: produce a focused artifact.
 - `refactor`: preserve behavior while improving structure.
 - `optimize`: improve meaningful performance bottlenecks.
 - `test`: add, update, or design tests.
-- `migrate`: move code, data, APIs, config, or behavior across states.
 - `upgrade`: change dependency, SDK, framework, runtime, or platform versions.
 - `document`: create or improve maintained documentation.
-- `compare`: compare options or implementations.
 - `commit`: prepare a git commit only when explicitly requested.
+
+Simple questions do not need a command; rely on always-applied rules and direct chat.
+See [COMMANDS.md](./COMMANDS.md) for full documentation.
 
 ## Maintenance Workflow
 

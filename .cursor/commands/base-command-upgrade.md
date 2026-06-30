@@ -17,7 +17,7 @@ Apply the upgrade safely while preserving expected behavior and compatibility.
 
 # Do Not Use This When
 
-- Use `migrate` when moving data, architecture, APIs, or workflows across states.
+- Use `plan` when the upgrade needs an approved rollout plan before edits.
 - Use `implement` when the version is unchanged and only product behavior changes.
 
 ---

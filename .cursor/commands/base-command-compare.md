@@ -17,7 +17,7 @@ Return a clear recommendation when the evidence supports one.
 
 # Do Not Use This When
 
-- Use `research` when the options are not yet understood.
+- Use `analyze` when the options are not yet understood and need investigation first.
 - Use `design` when the user wants a new proposed solution, not a comparison.
 
 ---

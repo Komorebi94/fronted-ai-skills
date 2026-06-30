@@ -1,20 +1,6 @@
 version: 1
 
 commands:
-  - name: ask
-    file: .cursor/commands/base-command-ask.md
-    mode: read-only
-    category: support
-    skills: []
-    template: .cursor/templates/answer.template.md
-    example:
-  - name: research
-    file: .cursor/commands/base-command-research.md
-    mode: read-only
-    category: research
-    skills: [documentation, api-integration, typescript-quality, frontend-engineering]
-    template: .cursor/templates/research-summary.template.md
-    example: .cursor/examples/research-summary.example.md
   - name: analyze
     file: .cursor/commands/base-command-analyze.md
     mode: read-only
@@ -85,13 +71,6 @@ commands:
     skills: [frontend-engineering, api-integration, typescript-quality, testing-strategy, ui-ux-accessibility]
     template: .cursor/templates/implementation-summary.template.md
     example: .cursor/examples/implementation-result.example.md
-  - name: generate
-    file: .cursor/commands/base-command-generate.md
-    mode: write
-    category: generation
-    skills: [frontend-engineering, typescript-quality, testing-strategy, documentation, ui-ux-accessibility]
-    template: .cursor/templates/generated-artifact.template.md
-    example:
   - name: refactor
     file: .cursor/commands/base-command-refactor.md
     mode: write
@@ -113,13 +92,6 @@ commands:
     skills: [testing-strategy, bug-investigation, api-integration, frontend-engineering, typescript-quality]
     template: .cursor/templates/test-plan.template.md
     example: .cursor/examples/test-plan.example.md
-  - name: migrate
-    file: .cursor/commands/base-command-migrate.md
-    mode: write
-    category: migration
-    skills: [architecture-review, api-integration, typescript-quality, testing-strategy, documentation, frontend-engineering]
-    template: .cursor/templates/migration-plan.template.md
-    example: .cursor/examples/migration-plan.example.md
   - name: upgrade
     file: .cursor/commands/base-command-upgrade.md
     mode: write

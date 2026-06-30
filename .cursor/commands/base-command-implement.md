@@ -18,7 +18,8 @@ Choose the smallest production-ready solution that satisfies the requirement.
 # Do Not Use This When
 
 - Use `plan` when requirements or approach need approval before edits.
-- Use `generate` when the user only wants an artifact and not applied changes.
+- Use `upgrade` when the main work is a dependency, SDK, or platform version change.
+- Use `optimize` when the main work is performance improvement without product behavior changes.
 
 ---
 
