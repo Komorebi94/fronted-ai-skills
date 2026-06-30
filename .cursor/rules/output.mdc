@@ -1,0 +1,17 @@
+---
+description: Concise and useful response standards
+alwaysApply: true
+---
+
+# Output Standards
+
+## Always
+
+- Use Markdown for structure when it improves readability.
+- Keep answers concise and focused on the user's actual request.
+- Lead with the result, recommendation, or finding before background detail.
+- Use headings and bullet lists only when they make the answer easier to scan.
+- Show only relevant code, commands, errors, or diffs.
+- State important assumptions, risks, or incomplete verification clearly.
+- Do not output chain-of-thought or hidden reasoning.
+- Avoid filler, repeated caveats, and unnecessary step-by-step narration.

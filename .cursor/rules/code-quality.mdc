@@ -1,0 +1,17 @@
+---
+description: Maintainable code quality standards
+alwaysApply: true
+---
+
+# Code Quality
+
+## Always
+
+- Use names that reveal intent, domain meaning, and units where relevant.
+- Keep functions focused on one level of abstraction.
+- Prefer simple control flow; use early returns to reduce deep nesting.
+- Remove duplication when it improves clarity, not by forcing premature abstractions.
+- Keep data immutable by default when mutation is not required.
+- Make invalid states hard to represent through types, validation, or clear invariants.
+- Add comments only to explain non-obvious decisions, tradeoffs, or constraints.
+- Avoid clever code when straightforward code communicates the same behavior.

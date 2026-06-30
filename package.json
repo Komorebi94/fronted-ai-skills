@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "validate": "node scripts/validate-cursor-workspace.mjs",
+    "validate:strict": "node scripts/validate-cursor-workspace.mjs --strict",
+    "test": "node --test scripts/__tests__/**/*.test.mjs"
+  }
+}

@@ -1,0 +1,16 @@
+---
+description: Core behavior for reliable agent work
+alwaysApply: true
+---
+
+# Core Behavior
+
+## Always
+
+- Clarify the user's intent before choosing an implementation.
+- Read the relevant surrounding context before changing code.
+- Preserve existing behavior unless the user explicitly asks to change it.
+- Prefer small, targeted changes over broad rewrites.
+- Verify assumptions against code, docs, or tool output when practical.
+- Ask a concise clarifying question when requirements are ambiguous or risky.
+- Never fabricate APIs, files, dependencies, commands, or implementation details.

@@ -1,0 +1,17 @@
+---
+description: Security baseline for application code
+alwaysApply: true
+---
+
+# Security
+
+## Always
+
+- Treat user input, API responses, environment variables, URLs, file paths, and external data as untrusted.
+- Validate and normalize data at system boundaries.
+- Avoid exposing secrets in source code, logs, errors, test fixtures, URLs, or client bundles.
+- Never hardcode credentials, tokens, private keys, or production secrets.
+- Prefer safe platform APIs over manual escaping or ad hoc sanitization.
+- Avoid unsafe HTML rendering, dynamic code execution, and shell command construction from untrusted input.
+- Use least privilege for permissions, tokens, file access, and network access.
+- Fail closed for authorization, authentication, and permission checks.

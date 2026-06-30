@@ -1,0 +1,180 @@
+version: 1
+
+commands:
+  - name: ask
+    file: .cursor/commands/base-command-ask.md
+    mode: read-only
+    category: support
+    skills: []
+    template: .cursor/templates/answer.template.md
+    example:
+  - name: research
+    file: .cursor/commands/base-command-research.md
+    mode: read-only
+    category: research
+    skills: [documentation, api-integration, typescript-quality, frontend-engineering]
+    template: .cursor/templates/research-summary.template.md
+    example: .cursor/examples/research-summary.example.md
+  - name: analyze
+    file: .cursor/commands/base-command-analyze.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, architecture-review, frontend-engineering, api-integration, typescript-quality, performance-optimization]
+    template: .cursor/templates/analysis-report.template.md
+    example: .cursor/examples/analysis-report.example.md
+  - name: explain
+    file: .cursor/commands/base-command-explain.md
+    mode: read-only
+    category: education
+    skills: [architecture-review, frontend-engineering, api-integration, typescript-quality, refactoring]
+    template: .cursor/templates/explanation.template.md
+    example:
+  - name: review
+    file: .cursor/commands/base-command-review.md
+    mode: read-only
+    category: review
+    skills: [code-review, security-review, bug-investigation, typescript-quality, testing-strategy, api-integration]
+    template: .cursor/templates/review-report.template.md
+    example: .cursor/examples/review-finding.example.md
+  - name: audit
+    file: .cursor/commands/base-command-audit.md
+    mode: read-only
+    category: review
+    skills: [security-review, code-review, api-integration, frontend-engineering, typescript-quality]
+    template: .cursor/templates/security-audit.template.md
+    example: .cursor/examples/security-audit.example.md
+  - name: find-bug
+    file: .cursor/commands/base-command-find-bug.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, api-integration, typescript-quality, frontend-engineering]
+    template: .cursor/templates/bug-report.template.md
+    example: .cursor/examples/bug-investigation.example.md
+  - name: compare
+    file: .cursor/commands/base-command-compare.md
+    mode: read-only
+    category: decision
+    skills: [architecture-review, frontend-engineering, api-integration, performance-optimization, typescript-quality, testing-strategy]
+    template: .cursor/templates/comparison.template.md
+    example:
+  - name: architecture
+    file: .cursor/commands/base-command-architecture.md
+    mode: read-only
+    category: architecture
+    skills: [architecture-review, frontend-engineering, api-integration, refactoring, performance-optimization]
+    template: .cursor/templates/architecture-review.template.md
+    example: .cursor/examples/architecture-review.example.md
+  - name: design
+    file: .cursor/commands/base-command-design.md
+    mode: planning
+    category: architecture
+    skills: [architecture-review, frontend-engineering, ui-ux-accessibility, api-integration, typescript-quality, testing-strategy]
+    template: .cursor/templates/design-doc.template.md
+    example: .cursor/examples/design-doc.example.md
+  - name: plan
+    file: .cursor/commands/base-command-plan.md
+    mode: planning
+    category: planning
+    skills: [architecture-review, frontend-engineering, refactoring, testing-strategy, api-integration, performance-optimization]
+    template: .cursor/templates/implementation-plan.template.md
+    example: .cursor/examples/implementation-plan.example.md
+  - name: implement
+    file: .cursor/commands/base-command-implement.md
+    mode: write
+    category: implementation
+    skills: [frontend-engineering, api-integration, typescript-quality, testing-strategy, ui-ux-accessibility]
+    template: .cursor/templates/implementation-summary.template.md
+    example: .cursor/examples/implementation-result.example.md
+  - name: generate
+    file: .cursor/commands/base-command-generate.md
+    mode: write
+    category: generation
+    skills: [frontend-engineering, typescript-quality, testing-strategy, documentation, ui-ux-accessibility]
+    template: .cursor/templates/generated-artifact.template.md
+    example:
+  - name: refactor
+    file: .cursor/commands/base-command-refactor.md
+    mode: write
+    category: implementation
+    skills: [refactoring, architecture-review, typescript-quality, frontend-engineering, testing-strategy]
+    template: .cursor/templates/refactor-summary.template.md
+    example: .cursor/examples/refactor-summary.example.md
+  - name: optimize
+    file: .cursor/commands/base-command-optimize.md
+    mode: write
+    category: performance
+    skills: [performance-optimization, frontend-engineering, api-integration, testing-strategy]
+    template: .cursor/templates/optimization-plan.template.md
+    example: .cursor/examples/performance-analysis.example.md
+  - name: test
+    file: .cursor/commands/base-command-test.md
+    mode: write
+    category: testing
+    skills: [testing-strategy, bug-investigation, api-integration, frontend-engineering, typescript-quality]
+    template: .cursor/templates/test-plan.template.md
+    example: .cursor/examples/test-plan.example.md
+  - name: migrate
+    file: .cursor/commands/base-command-migrate.md
+    mode: write
+    category: migration
+    skills: [architecture-review, api-integration, typescript-quality, testing-strategy, documentation, frontend-engineering]
+    template: .cursor/templates/migration-plan.template.md
+    example: .cursor/examples/migration-plan.example.md
+  - name: upgrade
+    file: .cursor/commands/base-command-upgrade.md
+    mode: write
+    category: migration
+    skills: [typescript-quality, testing-strategy, api-integration, documentation, frontend-engineering]
+    template: .cursor/templates/upgrade-summary.template.md
+    example:
+  - name: document
+    file: .cursor/commands/base-command-document.md
+    mode: write
+    category: documentation
+    skills: [documentation, api-integration, typescript-quality, frontend-engineering]
+    template: .cursor/templates/documentation.template.md
+    example: .cursor/examples/documentation.example.md
+  - name: commit
+    file: .cursor/commands/base-command-commit.md
+    mode: git
+    category: release
+    skills: [code-review, security-review, documentation, testing-strategy]
+    template: .cursor/templates/commit-summary.template.md
+    example: .cursor/examples/commit-summary.example.md
+
+skills:
+  - name: api-integration
+    file: .cursor/skills/api-integration/SKILL.md
+  - name: architecture-review
+    file: .cursor/skills/architecture-review/SKILL.md
+  - name: bug-investigation
+    file: .cursor/skills/bug-investigation/SKILL.md
+  - name: code-review
+    file: .cursor/skills/code-review/SKILL.md
+  - name: documentation
+    file: .cursor/skills/documentation/SKILL.md
+  - name: frontend-engineering
+    file: .cursor/skills/frontend-engineering/SKILL.md
+  - name: performance-optimization
+    file: .cursor/skills/performance-optimization/SKILL.md
+  - name: refactoring
+    file: .cursor/skills/refactoring/SKILL.md
+  - name: security-review
+    file: .cursor/skills/security-review/SKILL.md
+  - name: testing-strategy
+    file: .cursor/skills/testing-strategy/SKILL.md
+  - name: typescript-quality
+    file: .cursor/skills/typescript-quality/SKILL.md
+  - name: ui-ux-accessibility
+    file: .cursor/skills/ui-ux-accessibility/SKILL.md
+
+artifacts:
+  - name: api-integration
+    template: .cursor/templates/api-integration.template.md
+    example: .cursor/examples/api-integration.example.md
+  - name: pull-request
+    template: .cursor/templates/pr-description.template.md
+    example: .cursor/examples/pr-description.example.md
+  - name: refactor-plan
+    template: .cursor/templates/refactor-plan.template.md
+    example:
