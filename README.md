@@ -1,24 +1,53 @@
-# Cursor AI Engineering Workspace
+# AI Engineering Workspace
 
-This repository contains reusable Cursor agent configuration for production
-software engineering workflows. It is designed to be copied or packaged across
-projects without coupling prompts to one application framework.
+Reusable agent configuration for production software engineering workflows across **Cursor**, **Codex**, and **Claude Code**. Copy or package the platform folder that matches your tool.
 
 ## Structure
 
-| Path | Purpose |
-|---|---|
-| `AGENTS.md` | Human-facing operating guide, precedence rules, and command selection guide |
-| `COMMANDS.md` | Command 功能说明：每个 command 的用途、边界与输出格式 |
-| `.cursor/rules/` | Global baselines that apply across tasks |
-| `.cursor/commands/` | User intent entry points and workflow boundaries |
-| `.cursor/skills/` | Reusable engineering methodology and checklists |
-| `.cursor/templates/` | Canonical output skeletons |
-| `.cursor/examples/` | Quality examples for standard artifacts |
-| `.cursor/manifest.yaml` | Machine-readable mapping for validation |
-| `scripts/validate-cursor-workspace.mjs` | No-dependency consistency checker |
-| `scripts/lib/cursor-workspace-validator.mjs` | Shared validation logic used by CLI and tests |
-| `.github/workflows/validate.yml` | CI workflow for validate + test |
+| Path | Platform | Purpose |
+|---|---|---|
+| `README.md` | All | 仓库入口与三平台说明 |
+| `COMMANDS.md` | All | Command 功能说明（16 个 workflow） |
+| `.cursor/` | Cursor | AGENTS.md, rules, commands, skills, templates, examples, manifest |
+| `.codex/` | Codex | AGENTS.md, rules, skills, commands, templates, examples, manifest |
+| `.claude/` | Claude Code | CLAUDE.md, rules, skills, commands, templates, examples, manifest |
+| `scripts/validate-cursor-workspace.mjs` | Cursor | No-dependency consistency checker |
+| `scripts/migrate-platform-workspace.mjs` | Codex / Claude | Regenerate platform folders from `.cursor/` |
+| `scripts/lib/cursor-workspace-validator.mjs` | Cursor | Shared validation logic |
+| `.github/workflows/validate.yml` | Cursor | CI workflow for validate + test |
+
+## Platform Quick Start
+
+### Cursor
+
+Copy `.cursor/` into your project. Rules auto-apply via `.mdc` frontmatter. See [`.cursor/AGENTS.md`](./.cursor/AGENTS.md) for architecture and precedence. Invoke workflows with slash commands (see [COMMANDS.md](./COMMANDS.md)).
+
+### Codex
+
+1. Copy [`.codex/AGENTS.md`](./.codex/AGENTS.md) → project root `AGENTS.md`
+2. Copy [`.codex/skills/`](./.codex/skills/) → `.agents/skills/`
+3. Reference templates/examples from `.codex/` or copy alongside
+
+See [`.codex/AGENTS.md`](./.codex/AGENTS.md) for precedence and command selection.
+
+### Claude Code
+
+1. Use [`.claude/CLAUDE.md`](./.claude/CLAUDE.md) as project memory (or root `CLAUDE.md`)
+2. Rules load from [`.claude/rules/`](./.claude/rules/)
+3. Invoke workflows with `/analyze`, `/implement`, etc. (see [COMMANDS.md](./COMMANDS.md))
+
+See [`.claude/CLAUDE.md`](./.claude/CLAUDE.md) for precedence and command selection.
+
+## Sync Across Platforms
+
+Source of truth for content is `.cursor/`. After editing rules, skills, commands, templates, or examples:
+
+```sh
+node scripts/migrate-platform-workspace.mjs
+npm run validate:platforms
+```
+
+This regenerates `.codex/` and `.claude/` with platform-native paths and formats, then validates manifest paths and guide integrity.
 
 ## Command Selection
 
@@ -53,7 +82,7 @@ When adding a command:
 3. Reference relevant skills by name.
 4. Reference one primary template in `# Output`.
 5. Add or reuse a template and optional example.
-6. Update `.cursor/manifest.yaml` and `AGENTS.md`.
+6. Update `.cursor/manifest.yaml` and `.cursor/AGENTS.md`.
 7. Run `npm run validate`.
 
 When adding a skill:
@@ -92,7 +121,7 @@ The validator checks:
 - Command skill references match manifest skills.
 - Every skill has the standard 7 sections.
 - Templates and examples are not orphaned.
-- `AGENTS.md` command/template/example map matches the manifest.
+- `.cursor/AGENTS.md` command/template/example map matches the manifest.
 - Duplicate primary templates across commands are rejected.
 
 Warnings:
@@ -104,7 +133,8 @@ CI runs `npm run validate` and `npm test` on push and pull requests.
 
 ## Reuse Strategy
 
-For a few projects, copy this repository's `.cursor/` configuration and keep
-changes small. For many projects or team-wide distribution, package the system
-as a Cursor Plugin so rules, commands, skills, and updates can be versioned
-centrally.
+- **Cursor**: copy `.cursor/` into your project; package as a Cursor Plugin for team distribution.
+- **Codex**: copy `.codex/AGENTS.md` → root `AGENTS.md` and `.codex/skills/` → `.agents/skills/`.
+- **Claude Code**: copy `.claude/` into your project; use `.claude/CLAUDE.md` as project memory.
+
+For many projects, keep this repo as the single source and run `npm run migrate:platforms` after editing `.cursor/`.

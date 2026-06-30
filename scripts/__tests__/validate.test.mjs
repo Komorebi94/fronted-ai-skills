@@ -88,7 +88,7 @@ test("validateWorkspace reports missing AGENTS command rows", () => {
 
     const result = validateWorkspace(tempDir);
     assert.equal(result.ok, false);
-    assert.ok(result.errors.some((error) => error.includes("AGENTS.md missing command")));
+    assert.ok(result.errors.some((error) => error.includes(".cursor/AGENTS.md missing command")));
   } finally {
     rmSync(tempDir, { recursive: true, force: true });
   }
@@ -213,7 +213,7 @@ artifacts: []
     : `| \`ask\` | \`answer.template.md\` | ${includeExample ? "`answer.example.md`" : "—"} |`;
 
   writeFileSync(
-    path.join(rootDir, "AGENTS.md"),
+    path.join(rootDir, ".cursor/AGENTS.md"),
     `### Command ↔ Template ↔ Example Map
 
 | Command | Template | Example |

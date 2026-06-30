@@ -2,6 +2,8 @@
   "scripts": {
     "validate": "node scripts/validate-cursor-workspace.mjs",
     "validate:strict": "node scripts/validate-cursor-workspace.mjs --strict",
+    "validate:platforms": "node scripts/validate-platform-workspace.mjs",
+    "migrate:platforms": "node scripts/migrate-platform-workspace.mjs",
     "test": "node --test scripts/__tests__/**/*.test.mjs"
   }
 }

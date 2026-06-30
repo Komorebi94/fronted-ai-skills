@@ -1,0 +1,152 @@
+version: 1
+
+commands:
+  - name: analyze
+    file: .claude/commands/analyze.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, architecture-review, frontend-engineering, api-integration, typescript-quality, performance-optimization]
+    template: .claude/templates/analysis-report.template.md
+    example: .claude/examples/analysis-report.example.md
+  - name: explain
+    file: .claude/commands/explain.md
+    mode: read-only
+    category: education
+    skills: [architecture-review, frontend-engineering, api-integration, typescript-quality, refactoring]
+    template: .claude/templates/explanation.template.md
+    example:
+  - name: review
+    file: .claude/commands/review.md
+    mode: read-only
+    category: review
+    skills: [code-review, security-review, bug-investigation, typescript-quality, testing-strategy, api-integration]
+    template: .claude/templates/review-report.template.md
+    example: .claude/examples/review-finding.example.md
+  - name: audit
+    file: .claude/commands/audit.md
+    mode: read-only
+    category: review
+    skills: [security-review, code-review, api-integration, frontend-engineering, typescript-quality]
+    template: .claude/templates/security-audit.template.md
+    example: .claude/examples/security-audit.example.md
+  - name: find-bug
+    file: .claude/commands/find-bug.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, api-integration, typescript-quality, frontend-engineering]
+    template: .claude/templates/bug-report.template.md
+    example: .claude/examples/bug-investigation.example.md
+  - name: compare
+    file: .claude/commands/compare.md
+    mode: read-only
+    category: decision
+    skills: [architecture-review, frontend-engineering, api-integration, performance-optimization, typescript-quality, testing-strategy]
+    template: .claude/templates/comparison.template.md
+    example:
+  - name: architecture
+    file: .claude/commands/architecture.md
+    mode: read-only
+    category: architecture
+    skills: [architecture-review, frontend-engineering, api-integration, refactoring, performance-optimization]
+    template: .claude/templates/architecture-review.template.md
+    example: .claude/examples/architecture-review.example.md
+  - name: design
+    file: .claude/commands/design.md
+    mode: planning
+    category: architecture
+    skills: [architecture-review, frontend-engineering, ui-ux-accessibility, api-integration, typescript-quality, testing-strategy]
+    template: .claude/templates/design-doc.template.md
+    example: .claude/examples/design-doc.example.md
+  - name: plan
+    file: .claude/commands/plan.md
+    mode: planning
+    category: planning
+    skills: [architecture-review, frontend-engineering, refactoring, testing-strategy, api-integration, performance-optimization]
+    template: .claude/templates/implementation-plan.template.md
+    example: .claude/examples/implementation-plan.example.md
+  - name: implement
+    file: .claude/commands/implement.md
+    mode: write
+    category: implementation
+    skills: [frontend-engineering, api-integration, typescript-quality, testing-strategy, ui-ux-accessibility]
+    template: .claude/templates/implementation-summary.template.md
+    example: .claude/examples/implementation-result.example.md
+  - name: refactor
+    file: .claude/commands/refactor.md
+    mode: write
+    category: implementation
+    skills: [refactoring, architecture-review, typescript-quality, frontend-engineering, testing-strategy]
+    template: .claude/templates/refactor-summary.template.md
+    example: .claude/examples/refactor-summary.example.md
+  - name: optimize
+    file: .claude/commands/optimize.md
+    mode: write
+    category: performance
+    skills: [performance-optimization, frontend-engineering, api-integration, testing-strategy]
+    template: .claude/templates/optimization-plan.template.md
+    example: .claude/examples/performance-analysis.example.md
+  - name: test
+    file: .claude/commands/test.md
+    mode: write
+    category: testing
+    skills: [testing-strategy, bug-investigation, api-integration, frontend-engineering, typescript-quality]
+    template: .claude/templates/test-plan.template.md
+    example: .claude/examples/test-plan.example.md
+  - name: upgrade
+    file: .claude/commands/upgrade.md
+    mode: write
+    category: migration
+    skills: [typescript-quality, testing-strategy, api-integration, documentation, frontend-engineering]
+    template: .claude/templates/upgrade-summary.template.md
+    example:
+  - name: document
+    file: .claude/commands/document.md
+    mode: write
+    category: documentation
+    skills: [documentation, api-integration, typescript-quality, frontend-engineering]
+    template: .claude/templates/documentation.template.md
+    example: .claude/examples/documentation.example.md
+  - name: commit
+    file: .claude/commands/commit.md
+    mode: git
+    category: release
+    skills: [code-review, security-review, documentation, testing-strategy]
+    template: .claude/templates/commit-summary.template.md
+    example: .claude/examples/commit-summary.example.md
+
+skills:
+  - name: api-integration
+    file: .claude/skills/api-integration/SKILL.md
+  - name: architecture-review
+    file: .claude/skills/architecture-review/SKILL.md
+  - name: bug-investigation
+    file: .claude/skills/bug-investigation/SKILL.md
+  - name: code-review
+    file: .claude/skills/code-review/SKILL.md
+  - name: documentation
+    file: .claude/skills/documentation/SKILL.md
+  - name: frontend-engineering
+    file: .claude/skills/frontend-engineering/SKILL.md
+  - name: performance-optimization
+    file: .claude/skills/performance-optimization/SKILL.md
+  - name: refactoring
+    file: .claude/skills/refactoring/SKILL.md
+  - name: security-review
+    file: .claude/skills/security-review/SKILL.md
+  - name: testing-strategy
+    file: .claude/skills/testing-strategy/SKILL.md
+  - name: typescript-quality
+    file: .claude/skills/typescript-quality/SKILL.md
+  - name: ui-ux-accessibility
+    file: .claude/skills/ui-ux-accessibility/SKILL.md
+
+artifacts:
+  - name: api-integration
+    template: .claude/templates/api-integration.template.md
+    example: .claude/examples/api-integration.example.md
+  - name: pull-request
+    template: .claude/templates/pr-description.template.md
+    example: .claude/examples/pr-description.example.md
+  - name: refactor-plan
+    template: .claude/templates/refactor-plan.template.md
+    example:

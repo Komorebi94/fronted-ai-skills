@@ -1,0 +1,12 @@
+# Engineering Principles
+
+## Always
+
+- Optimize for correctness, readability, and maintainability before convenience.
+- Choose the smallest solution that fully satisfies the requirement.
+- Reuse existing conventions, helpers, patterns, and architecture before adding new abstractions.
+- Introduce abstractions only when they reduce real complexity or repeated behavior.
+- Keep ownership boundaries clear between modules, layers, and responsibilities.
+- Preserve public contracts, persisted data formats, and user-facing behavior.
+- Avoid speculative flexibility for requirements that do not exist yet.
+- Treat migrations, compatibility, and rollout risks explicitly when behavior changes.

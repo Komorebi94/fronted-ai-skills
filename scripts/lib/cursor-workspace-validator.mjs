@@ -154,7 +154,7 @@ export function validateWorkspace(rootDir, { strict = false } = {}) {
   const errors = [];
   const warnings = [];
   const manifestPath = path.join(rootDir, ".cursor/manifest.yaml");
-  const agentsPath = path.join(rootDir, "AGENTS.md");
+  const agentsPath = path.join(rootDir, ".cursor/AGENTS.md");
 
   if (!existsSync(manifestPath)) {
     errors.push("Missing .cursor/manifest.yaml");
@@ -298,7 +298,7 @@ export function validateWorkspace(rootDir, { strict = false } = {}) {
     const { rows, error } = parseAgentsCommandMap(agentsText);
 
     if (error) {
-      errors.push(`AGENTS.md: ${error}`);
+      errors.push(`.cursor/AGENTS.md: ${error}`);
     } else {
       const agentsByName = new Map(rows.map((row) => [row.name, row]));
       const manifestByName = new Map(manifest.commands.map((command) => [command.name, command]));
@@ -306,32 +306,32 @@ export function validateWorkspace(rootDir, { strict = false } = {}) {
       for (const command of manifest.commands) {
         const agentsRow = agentsByName.get(command.name);
         if (!agentsRow) {
-          errors.push(`AGENTS.md missing command in map: ${command.name}`);
+          errors.push(`.cursor/AGENTS.md missing command in map: ${command.name}`);
           continue;
         }
 
         if (agentsRow.template !== command.template) {
           errors.push(
-            `AGENTS.md template mismatch for "${command.name}": manifest=${command.template}, agents=${agentsRow.template}`,
+            `.cursor/AGENTS.md template mismatch for "${command.name}": manifest=${command.template}, agents=${agentsRow.template}`,
           );
         }
 
         const manifestExample = command.example ?? null;
         if (agentsRow.example !== manifestExample) {
           errors.push(
-            `AGENTS.md example mismatch for "${command.name}": manifest=${manifestExample ?? "none"}, agents=${agentsRow.example ?? "none"}`,
+            `.cursor/AGENTS.md example mismatch for "${command.name}": manifest=${manifestExample ?? "none"}, agents=${agentsRow.example ?? "none"}`,
           );
         }
       }
 
       for (const row of rows) {
         if (!manifestByName.has(row.name)) {
-          errors.push(`AGENTS.md lists unknown command: ${row.name}`);
+          errors.push(`.cursor/AGENTS.md lists unknown command: ${row.name}`);
         }
       }
     }
   } else {
-    errors.push("Missing AGENTS.md");
+    errors.push("Missing .cursor/AGENTS.md");
   }
 
   return { errors, warnings, ok: errors.length === 0 };

@@ -1,0 +1,152 @@
+version: 1
+
+commands:
+  - name: analyze
+    file: .codex/commands/base-command-analyze.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, architecture-review, frontend-engineering, api-integration, typescript-quality, performance-optimization]
+    template: .codex/templates/analysis-report.template.md
+    example: .codex/examples/analysis-report.example.md
+  - name: explain
+    file: .codex/commands/base-command-explain.md
+    mode: read-only
+    category: education
+    skills: [architecture-review, frontend-engineering, api-integration, typescript-quality, refactoring]
+    template: .codex/templates/explanation.template.md
+    example:
+  - name: review
+    file: .codex/commands/base-command-review.md
+    mode: read-only
+    category: review
+    skills: [code-review, security-review, bug-investigation, typescript-quality, testing-strategy, api-integration]
+    template: .codex/templates/review-report.template.md
+    example: .codex/examples/review-finding.example.md
+  - name: audit
+    file: .codex/commands/base-command-audit.md
+    mode: read-only
+    category: review
+    skills: [security-review, code-review, api-integration, frontend-engineering, typescript-quality]
+    template: .codex/templates/security-audit.template.md
+    example: .codex/examples/security-audit.example.md
+  - name: find-bug
+    file: .codex/commands/base-command-find-bug.md
+    mode: read-only
+    category: analysis
+    skills: [bug-investigation, api-integration, typescript-quality, frontend-engineering]
+    template: .codex/templates/bug-report.template.md
+    example: .codex/examples/bug-investigation.example.md
+  - name: compare
+    file: .codex/commands/base-command-compare.md
+    mode: read-only
+    category: decision
+    skills: [architecture-review, frontend-engineering, api-integration, performance-optimization, typescript-quality, testing-strategy]
+    template: .codex/templates/comparison.template.md
+    example:
+  - name: architecture
+    file: .codex/commands/base-command-architecture.md
+    mode: read-only
+    category: architecture
+    skills: [architecture-review, frontend-engineering, api-integration, refactoring, performance-optimization]
+    template: .codex/templates/architecture-review.template.md
+    example: .codex/examples/architecture-review.example.md
+  - name: design
+    file: .codex/commands/base-command-design.md
+    mode: planning
+    category: architecture
+    skills: [architecture-review, frontend-engineering, ui-ux-accessibility, api-integration, typescript-quality, testing-strategy]
+    template: .codex/templates/design-doc.template.md
+    example: .codex/examples/design-doc.example.md
+  - name: plan
+    file: .codex/commands/base-command-plan.md
+    mode: planning
+    category: planning
+    skills: [architecture-review, frontend-engineering, refactoring, testing-strategy, api-integration, performance-optimization]
+    template: .codex/templates/implementation-plan.template.md
+    example: .codex/examples/implementation-plan.example.md
+  - name: implement
+    file: .codex/commands/base-command-implement.md
+    mode: write
+    category: implementation
+    skills: [frontend-engineering, api-integration, typescript-quality, testing-strategy, ui-ux-accessibility]
+    template: .codex/templates/implementation-summary.template.md
+    example: .codex/examples/implementation-result.example.md
+  - name: refactor
+    file: .codex/commands/base-command-refactor.md
+    mode: write
+    category: implementation
+    skills: [refactoring, architecture-review, typescript-quality, frontend-engineering, testing-strategy]
+    template: .codex/templates/refactor-summary.template.md
+    example: .codex/examples/refactor-summary.example.md
+  - name: optimize
+    file: .codex/commands/base-command-optimize.md
+    mode: write
+    category: performance
+    skills: [performance-optimization, frontend-engineering, api-integration, testing-strategy]
+    template: .codex/templates/optimization-plan.template.md
+    example: .codex/examples/performance-analysis.example.md
+  - name: test
+    file: .codex/commands/base-command-test.md
+    mode: write
+    category: testing
+    skills: [testing-strategy, bug-investigation, api-integration, frontend-engineering, typescript-quality]
+    template: .codex/templates/test-plan.template.md
+    example: .codex/examples/test-plan.example.md
+  - name: upgrade
+    file: .codex/commands/base-command-upgrade.md
+    mode: write
+    category: migration
+    skills: [typescript-quality, testing-strategy, api-integration, documentation, frontend-engineering]
+    template: .codex/templates/upgrade-summary.template.md
+    example:
+  - name: document
+    file: .codex/commands/base-command-document.md
+    mode: write
+    category: documentation
+    skills: [documentation, api-integration, typescript-quality, frontend-engineering]
+    template: .codex/templates/documentation.template.md
+    example: .codex/examples/documentation.example.md
+  - name: commit
+    file: .codex/commands/base-command-commit.md
+    mode: git
+    category: release
+    skills: [code-review, security-review, documentation, testing-strategy]
+    template: .codex/templates/commit-summary.template.md
+    example: .codex/examples/commit-summary.example.md
+
+skills:
+  - name: api-integration
+    file: .codex/skills/api-integration/SKILL.md
+  - name: architecture-review
+    file: .codex/skills/architecture-review/SKILL.md
+  - name: bug-investigation
+    file: .codex/skills/bug-investigation/SKILL.md
+  - name: code-review
+    file: .codex/skills/code-review/SKILL.md
+  - name: documentation
+    file: .codex/skills/documentation/SKILL.md
+  - name: frontend-engineering
+    file: .codex/skills/frontend-engineering/SKILL.md
+  - name: performance-optimization
+    file: .codex/skills/performance-optimization/SKILL.md
+  - name: refactoring
+    file: .codex/skills/refactoring/SKILL.md
+  - name: security-review
+    file: .codex/skills/security-review/SKILL.md
+  - name: testing-strategy
+    file: .codex/skills/testing-strategy/SKILL.md
+  - name: typescript-quality
+    file: .codex/skills/typescript-quality/SKILL.md
+  - name: ui-ux-accessibility
+    file: .codex/skills/ui-ux-accessibility/SKILL.md
+
+artifacts:
+  - name: api-integration
+    template: .codex/templates/api-integration.template.md
+    example: .codex/examples/api-integration.example.md
+  - name: pull-request
+    template: .codex/templates/pr-description.template.md
+    example: .codex/examples/pr-description.example.md
+  - name: refactor-plan
+    template: .codex/templates/refactor-plan.template.md
+    example:

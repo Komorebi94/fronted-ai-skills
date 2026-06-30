@@ -106,5 +106,5 @@
 
 ## 延伸阅读
 
-- [AGENTS.md](./AGENTS.md) — 架构与维护流程
+- [`.cursor/AGENTS.md`](./.cursor/AGENTS.md) — Cursor 架构与维护流程
 - [README.md](./README.md) — 仓库结构与校验
